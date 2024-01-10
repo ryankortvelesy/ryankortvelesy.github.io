@@ -3,7 +3,7 @@
 title: Ryan Kortvelesy
 
 # Name pronunciation (optional)
-# name_pronunciation: Ryan Kortvelesy
+name_pronunciation: Ryan Kortvelesy
 
 # Full name (for SEO)
 first_name: Ryan
