@@ -34,7 +34,7 @@ sections:
         - title: Software Engineer
           company: Amazon
           company_url: ''
-          company_logo: amazon
+          company_logo: amazon.png
           location: Seattle, WA
           date_start: Summer 2019
           date_end: ''
@@ -42,7 +42,7 @@ sections:
         - title: Intern
           company: JHU Applied Physics Lab, NASA
           company_url: ''
-          company_logo: nasa
+          company_logo: nasa.png
           location: Laurel, MD
           date_start: Summer 2018
           date_end: ''
@@ -50,7 +50,7 @@ sections:
         - title: Software Engineering Intern
           company: Mathworks
           company_url: ''
-          company_logo: matlab
+          company_logo: matlab.png
           location: Natick MA
           date_start: Summer 2017
           date_end: ''
