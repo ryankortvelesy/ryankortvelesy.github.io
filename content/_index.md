@@ -35,16 +35,16 @@ sections:
           company: Amazon
           company_url: ''
           company_logo: amazon
-          location: 'Seattle, WA'
-          date_start: 'Summer 2019'
+          location: Seattle, WA
+          date_start: Summer 2019
           date_end: ''
           description: Designed an internal tool for bug detection and reporting.
         - title: Intern
-          company: 'JHU Applied Physics Lab, NASA'
+          company: JHU Applied Physics Lab, NASA
           company_url: ''
           company_logo: nasa
-          location: 'Laurel, MD'
-          date_start: 'Summer 2018'
+          location: Laurel, MD
+          date_start: Summer 2018
           date_end: ''
           description: Developed an algorithm for scene reconstruction from Lidar, automated landing zone selection, and minimum fuel-cost trajectories for the Dragonfly project.
         - title: Software Engineering Intern
