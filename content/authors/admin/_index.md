@@ -3,7 +3,7 @@
 title: Ryan Kortvelesy
 
 # Name pronunciation (optional)
-name_pronunciation: Ryan Kortvelesy
+# name_pronunciation: Ryan Kortvelesy
 
 # Full name (for SEO)
 first_name: Ryan
@@ -31,7 +31,8 @@ organizations:
 interests:
   - Reinforcement Learning
   - Self-Supervsied Learning
-  - Transformers / Graph Neural Networks
+  - Transformers
+  - Graph Neural Networks
   - Cooperative Multi-Agent Systems
   - Mathematics
 
@@ -45,8 +46,8 @@ education:
       institution: University of Pennsylvania
       year: 2019
 
- Skills
- For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
+#  Skills
+#  For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
  skills:
    - name: Technical
      items:
