@@ -64,26 +64,28 @@ sections:
       date_format: Jan 2006
       items:
         - title: University of Cambridge
-          company: PhD in Computer Science
+          company: |2-
+            PhD in Computer Science
+            Prorok Lab
           company_url: ''
           company_logo: nasa
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
           description: |2-
-            * Prorok Lab
-            * "Supervisor: Amanda Prorok"
-            * "Thesis Title: Graph Neural Networks for Multi-Agent Learning"
+            Graph Neural Networks for Multi-Agent Learning
+            Supervisor: Amanda Prorok
         - title: University of Pennsylvania
-          company: BSE in Electrical Engineering
+          company: |2-
+            BSE in Electrical Engineering
+            Minors in Computer Science and Mathematics
+            Graduated *summa cum laude*
           company_url: ''
           company_logo: nasa
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
-          description: |2-
-            * Graduated *summa cum laude*
-            * Minors in Computer Science and Mathematics
+          description: ''
     design:
       columns: '2'
   - block: collection
