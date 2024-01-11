@@ -36,24 +36,24 @@ sections:
           company_url: ''
           company_logo: amazon
           location: Seattle, WA
-          date_start: 'June 2019'
-          date_end: 'August 2019'
+          date_start: '2019-06-01'
+          date_end: '2019-08-31'
           description: Designed an internal tool for bug detection and reporting.
         - title: Intern
           company: JHU Applied Physics Lab, NASA
           company_url: ''
           company_logo: nasa
           location: Laurel, MD
-          date_start: 'Summer 2018'
-          date_end: 'August 2018'
+          date_start: '2018-06-01'
+          date_end: '2018-08-31'
           description: Developed an algorithm for scene reconstruction from Lidar, automated landing zone selection, and minimum fuel-cost trajectories for the Dragonfly project.
         - title: Software Engineering Intern
           company: Mathworks
           company_url: ''
           company_logo: matlab
           location: Natick MA
-          date_start: 'June 2017'
-          date_end: 'August 2017'
+          date_start: '2017-06-01'
+          date_end: '2017-08-31'
           description: Created an algorithm for real-time data compression, optimised data structures for MATLAB speed increases, and formulated an approach for Simulink anomaly detection using a graph fourier transform.
     design:
       columns: '2'
