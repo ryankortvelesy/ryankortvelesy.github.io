@@ -70,7 +70,7 @@ sections:
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
-          description: |2-
+          description: >-
             Graph Neural Networks for Multi-Agent Learning
             Supervisor: Amanda Prorok
         - title: University of Pennsylvania
@@ -80,7 +80,7 @@ sections:
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
-          description: |2-
+          description: >-
             Minors in Computer Science and Mathematics
             Graduated *summa cum laude*
     design:
