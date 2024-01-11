@@ -113,5 +113,5 @@ social:
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Ryan Kortvelesy is a PhD student in the Prorok Lab at University of Cambridge. His research centres around the intersection between Machine Learning and Mathematics. Through the pursuit of analytical solutions to fundamental problems in machine learning, his goal is to develop new methods that provide solutions to real-world problems. Currently, he is focusing on the domains of Multi-Agent Reinforcement Learning and Graph Neural Networks (or Transformers). Within these domains, one application of particular interest is that of cooperative multi-agent systems---the task of training a set of agents (e.g. robots) to work together to achieve some emergent macroscopic behaviour.
 {style="text-align: justify;"}
