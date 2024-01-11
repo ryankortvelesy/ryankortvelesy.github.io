@@ -163,7 +163,10 @@ sections:
   - block: collection
     content:
       title: Recent Publications
-      text: [All Publications](./publication/)
+      text: |-
+        {{% callout note %}}
+        Quickly discover relevant content by [filtering publications](./publication/).
+        {{% /callout %}} #[All Publications](./publication/)
       filters:
         folders:
           - publication
