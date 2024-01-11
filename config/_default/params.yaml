@@ -6,28 +6,28 @@
 # Appearance
 
 appearance:
-  theme_day: Mr Robot
-  theme_night: Forest
+  theme_day: Forest
+  theme_night: Dark
   font: minimal
   font_size: L
 
 # SEO
 
-marketing:
-  seo:
-    site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder.'
-    twitter: 'GetResearchDev'
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
-  verification:
-    google: ''
-    baidu: ''
+# marketing:
+#   seo:
+#     site_type: Person
+#     local_business_type: ''
+#     org_name: ''
+#     description: 'A highly-customizable Hugo academic resume theme powered by Hugo Blox Builder.'
+#     twitter: 'GetResearchDev'
+#   analytics:
+#     google_analytics: ''
+#     baidu_tongji: ''
+#     google_tag_manager: ''
+#     microsoft_clarity: ''
+#   verification:
+#     google: ''
+#     baidu: ''
 
 # Site header
 
