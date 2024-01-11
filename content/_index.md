@@ -70,9 +70,11 @@ sections:
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
-          description: >-
+          description: |2-
             Graph Neural Networks for Multi-Agent Learning
+
             Supervisor: Amanda Prorok
+            *hello
         - title: University of Pennsylvania
           company: BSE in Electrical Engineering
           company_url: ''
@@ -80,8 +82,9 @@ sections:
           location: Cambridge, UK
           date_start: '2016-09-01'
           date_end: '2019-05-31'
-          description: >-
+          description: |2-
             Minors in Computer Science and Mathematics
+            
             Graduated *summa cum laude*
     design:
       columns: '2'
