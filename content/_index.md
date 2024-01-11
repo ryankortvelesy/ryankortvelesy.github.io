@@ -73,8 +73,8 @@ sections:
           date_end: '2019-05-31'
           description: |2-
             * Graph Neural Networks for Multi-Agent Learning
+            * Prorok Lab
             * Supervisor: Amanda Prorok
-            * Lab: Prorok Lab
         - title: University of Pennsylvania
           company: BSE in Electrical Engineering
           company_url: ''
@@ -210,9 +210,9 @@ sections:
       #   - 'Monday 10:00 to 13:00'
       #   - 'Wednesday 09:00 to 10:00'
       # Choose a map provider in `params.yaml` to show a map from these coordinates
-      coordinates:
-        latitude: '52.21125657062588'
-        longitude: '0.09202243562305723'  
+      # coordinates:
+      #   latitude: '52.21125657062588'
+      #   longitude: '0.09202243562305723'  
       # contact_links:
       #   - icon: twitter
       #     icon_pack: fab
