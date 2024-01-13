@@ -25,7 +25,7 @@ organizations:
     url: https://www.cst.cam.ac.uk/
 
 # Short bio (displayed in user profile at end of posts)
-bio: Machine Learning Research Scientist
+# bio: Machine Learning Research Scientist
 
 # Interests to show in About widget
 interests:
