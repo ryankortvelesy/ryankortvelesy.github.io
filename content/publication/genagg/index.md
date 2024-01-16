@@ -1,5 +1,5 @@
 ---
-title: 'An example conference paper'
+title: 'Generalised f-Mean Aggregation for Graph Neural Networks'
 
 authors:
   - admin
@@ -38,7 +38,7 @@ url_code: 'https://github.com/Acciorocketships/generalised-aggregation'
 url_dataset: ''
 url_poster: 'https://ryankortvelesy.github.io/content/publication/genagg/genagg_poster.pdf'
 url_project: ''
-url_slides: ''
+url_slides: 'https://nips.cc/virtual/2023/poster/72063'
 url_source: ''
 url_video: ''
 
@@ -54,23 +54,8 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects:
-  - example
-
-# Slides (optional).
-#   Associate this publication with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides: "example"` references `content/slides/example/index.md`.
-#   Otherwise, set `slides: ""`.
-slides: example
+projects: []
+slides: ""
 ---
 
-{{% callout note %}}
-Click the _Cite_ button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
 
-{{% callout note %}}
-Create your slides in Markdown - click the _Slides_ button to check out the example.
-{{% /callout %}}
-
-Add the publication's **full text** or **supplementary notes** here. You can use rich formatting such as including [code, math, and images](https://docs.hugoblox.com/content/writing-markdown-latex/).
