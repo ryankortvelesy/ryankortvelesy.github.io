@@ -36,7 +36,7 @@ featured: true
 url_pdf: 'https://arxiv.org/pdf/2306.13826.pdf'
 url_code: 'https://github.com/Acciorocketships/generalised-aggregation'
 url_dataset: ''
-url_poster: 'https://ryankortvelesy.github.io/content/publication/genagg/genagg_poster.pdf'
+url_poster: ''
 url_project: ''
 url_slides: 'https://nips.cc/virtual/2023/poster/72063'
 url_source: ''
