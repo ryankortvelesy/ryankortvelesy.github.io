@@ -72,9 +72,9 @@ sections:
           date_start: '2016-09-01'
           date_end: '2019-05-31'
           description: |2-
-            * Graph Neural Networks for Multi-Agent Learning
-            * Prorok Lab
-            * Supervisor: Amanda Prorok
+            - *Graph Neural Networks for Multi-Agent Learning*
+            - *Supervisor: Amanda Prorok*
+            - *Prorok Lab*
         - title: University of Pennsylvania
           company: BSE in Electrical Engineering
           company_url: ''
@@ -83,8 +83,8 @@ sections:
           date_start: '2016-09-01'
           date_end: '2019-05-31'
           description: |2-
-            * Minors in Computer Science and Mathematics
-            * Graduated *summa cum laude*
+            - *Minors in Computer Science and Mathematics*
+            - *Graduated summa cum laude*
     design:
       columns: '2'
   - block: collection
