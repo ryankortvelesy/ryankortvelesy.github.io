@@ -1,5 +1,5 @@
 ---
-title: 'Generalised f-Mean Aggregation for Graph Neural Networks'
+title: 'Permutation-Invariant Set Autoencoders with Fixed-Size Embeddings for Multi-Agent Learning'
 
 authors:
   - admin
