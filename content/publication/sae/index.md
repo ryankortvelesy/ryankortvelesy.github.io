@@ -158,15 +158,15 @@ optim.zero_grad()
 
 ## Architecture
 
-![Encoder](content/publication/sae/imgs/encoderschema.png)
-![Decoder](content/publication/sae/imgs/decoderschema.png)
+![Encoder](imgs/encoderschema.png)
+![Decoder](imgs/decoderschema.png)
 
 ## Results
 
-![Correlation](content/publication/sae/imgs/correlation.png)
-![Cardinality](content/publication/sae/imgs/cardinality.png)
-![Ablation](content/publication/sae/imgs/ablation.png)
-![Interpolation](content/publication/sae/imgs/interpolation.png)
-![MNIST](content/publication/sae/imgs/mnist.png)
-![Fusion Problem](hcontent/publication/sae/imgs/fusion1.png)
-![Fusion Results](content/publication/sae/imgs/fusion2.png)
+![Correlation](imgs/correlation.png)
+![Cardinality](imgs/cardinality.png)
+![Ablation](imgs/ablation.png)
+![Interpolation](imgs/interpolation.png)
+![MNIST](imgs/mnist.png)
+![Fusion Problem](imgs/fusion1.png)
+![Fusion Results](imgs/fusion2.png)
