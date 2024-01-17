@@ -18,7 +18,7 @@ publication_types: ['paper-conference']
 publication: Advances in Neural Information Processing Systems (NeurIPS)
 publication_short: NeurIPS
 
-abstract: Graph Neural Network (GNN) architectures are defined by their implementations of update and aggregation modules. While many works focus on new ways to parametrise the update modules, the aggregation modules receive comparatively little attention. Because it is difficult to parametrise aggregation functions, currently most methods select a ``standard aggregator'' such as $\mathrm{mean}$, $\mathrm{sum}$, or $\mathrm{max}$. While this selection is often made without any reasoning, it has been shown that the choice in aggregator has a significant impact on performance, and the best choice in aggregator is problem-dependent. Since aggregation is a lossy operation, it is crucial to select the most appropriate aggregator in order to minimise information loss. In this paper, we present GenAgg, a generalised aggregation operator, which parametrises a function space that includes all standard aggregators. In our experiments, we show that GenAgg is able to represent the standard aggregators with much higher accuracy than baseline methods. We also show that using GenAgg as a drop-in replacement for an existing aggregator in a GNN often leads to a significant boost in performance across various tasks.
+abstract: Graph Neural Network (GNN) architectures are defined by their implementations of update and aggregation modules. While many works focus on new ways to parametrise the update modules, the aggregation modules receive comparatively little attention. Because it is difficult to parametrise aggregation functions, currently most methods select a "standard aggregator" such as $\mathrm{mean}$, $\mathrm{sum}$, or $\mathrm{max}$. While this selection is often made without any reasoning, it has been shown that the choice in aggregator has a significant impact on performance, and the best choice in aggregator is problem-dependent. Since aggregation is a lossy operation, it is crucial to select the most appropriate aggregator in order to minimise information loss. In this paper, we present GenAgg, a generalised aggregation operator, which parametrises a function space that includes all standard aggregators. In our experiments, we show that GenAgg is able to represent the standard aggregators with much higher accuracy than baseline methods. We also show that using GenAgg as a drop-in replacement for an existing aggregator in a GNN often leads to a significant boost in performance across various tasks.
 
 # Summary. An optional shortened abstract.
 summary: We introduce GenAgg, a generalised learnable aggregator that can boost the representational complexity of Graph Neural Networks.
@@ -68,7 +68,7 @@ where $x_i$ are the inputs, $n=|\mathcal{X}|$ is the cardinality of the input, a
 - $\beta$: The $\beta$ parameter enables GenAgg to calculate _centralised moments_, which are quantitative measures of the distribution of the input $\mathcal{X}$. The first raw moment of $\mathcal{X}$ is the mean $\mu = \frac{1}{n}\sum{x_i}$, and the $k$-th central moment is given by $\mu_k = \sum{(x_i-\mu)^k}$. With the addition of $\beta$, it becomes possible for GenAgg to represent $\sqrt[k]{\mu_k}$, the $k$-th root of the $k$-th central moment. For example, for $k=2$, this quantity is the standard deviation. In general, the $\beta$ parameter can be understood as an indicator for whether an aggregator operates over the inputs themselves ($\beta=0$), or the variation between the inputs ($\beta=1$).
 
 <p align="center">
-<img src="https://github.com/Acciorocketships/generalised-aggregation/blob/main/imgs/special_cases.png" alt="Special Cases" width="500"/>
+<img src="https://ryankortvelesy.github.io/content/publication/genagg/imgs/special_cases.png" alt="Special Cases" width="500"/>
 </p>
 
 ## Installation
@@ -159,7 +159,7 @@ print("max error:", torch.max(torch.abs(x-xrec)).detach())
 
 The following plot shows a `InvertibleNN` trained to represent $\log(x)$. The dotted line is the ground truth, the blue line is the learned forward function, and the red line is the inverse function. Note that the inverse is not explicitly trained, but it still converges to $e^x$.
 <p align="center">
-<img src="https://github.com/Acciorocketships/generalised-aggregation/blob/main/imgs/plot_inverse.png" alt="Special Cases" width="500"/>
+<img src="https://ryankortvelesy.github.io/content/publication/genagg/imgs/plot_inverse.png" alt="Special Cases" width="500"/>
 </p>
 
 It is extremely straightforward to use GenAgg in existing GNN architectures. Simply set the `aggr` attribute of your GNN layer to an instance of GenAgg:
@@ -216,5 +216,5 @@ print("agg(c˚xi):", yc2.detach())
 >```
 
 <p align="center">
-<img src="https://github.com/Acciorocketships/generalised-aggregation/blob/main/imgs/dist_ops.png" alt="Distributive Operations" width="500"/>
+<img src="https://ryankortvelesy.github.io/content/publication/genagg/imgs/dist_ops.png" alt="Distributive Operations" width="500"/>
 </p>
