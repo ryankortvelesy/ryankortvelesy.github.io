@@ -158,15 +158,15 @@ optim.zero_grad()
 
 ## Architecture
 
-![Encoder](https://ryankortvelesy.github.io/content/publication/sae/imgs/encoderschema.png)
-![Decoder](https://ryankortvelesy.github.io/content/publication/sae/imgs/decoderschema.png)
+![Encoder](content/publication/sae/imgs/encoderschema.png)
+![Decoder](content/publication/sae/imgs/decoderschema.png)
 
 ## Results
 
-![Correlation](https://ryankortvelesy.github.io/content/publication/sae/imgs/correlation.png)
-![Cardinality](https://ryankortvelesy.github.io/content/publication/sae/imgs/cardinality.png)
-![Ablation](https://ryankortvelesy.github.io/content/publication/sae/imgs/ablation.png)
-![Interpolation](https://ryankortvelesy.github.io/content/publication/sae/imgs/interpolation.png)
-![MNIST](https://ryankortvelesy.github.io/content/publication/sae/imgs/mnist.png)
-![Fusion Problem](https://ryankortvelesy.github.io/content/publication/sae/imgs/fusion1.png)
-![Fusion Results](https://ryankortvelesy.github.io/content/publication/sae/imgs/fusion2.png)
+![Correlation](content/publication/sae/imgs/correlation.png)
+![Cardinality](content/publication/sae/imgs/cardinality.png)
+![Ablation](content/publication/sae/imgs/ablation.png)
+![Interpolation](content/publication/sae/imgs/interpolation.png)
+![MNIST](content/publication/sae/imgs/mnist.png)
+![Fusion Problem](hcontent/publication/sae/imgs/fusion1.png)
+![Fusion Results](content/publication/sae/imgs/fusion2.png)
