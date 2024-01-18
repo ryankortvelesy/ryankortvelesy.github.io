@@ -21,7 +21,7 @@ publication_short: AAMAS
 abstract: The problem of permutation-invariant learning over set representations is particularly relevant in the field of multi-agent systems---a few potential applications include unsupervised training of aggregation functions in graph neural networks (GNNs), neural cellular automata on graphs, and prediction of scenes with multiple objects. Yet existing approaches to set encoding and decoding tasks present a host of issues, including non-permutation-invariance, fixed-length outputs, reliance on iterative methods, non-deterministic outputs, computationally expensive loss functions, and poor reconstruction accuracy. In this paper we introduce a Permutation-Invariant Set Autoencoder (PISA), which tackles these problems and produces encodings with significantly lower reconstruction error than existing baselines. PISA also provides other desirable properties, including a similarity-preserving latent space, and the ability to insert or remove elements from the encoding. After evaluating PISA against baseline methods, we demonstrate its usefulness in a multi-agent application. Using PISA as a subcomponent, we introduce a novel GNN architecture which serves as a generalised communication scheme, allowing agents to use communication to gain full observability of a system.
 
 # Summary. An optional shortened abstract.
-summary: 
+summary: We introduce a Permutation-Invariant Set Autoencoder (PISA), which defines a bijective mapping between variable-sized sets and fixed-sized embeddings.
 
 tags: []
 
