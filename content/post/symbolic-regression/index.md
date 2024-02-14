@@ -131,3 +131,21 @@ While the coefficients of this equation are not correct, this is expected behavi
 At this stage in training, we again visualise the function that has been learned so far:
 
 ![During Training](imgs/during_training.png)
+
+Since more of the complexity of the function is handled by the symbolic parts, this approximation is much more accurate.
+
+After a couple more iterations, we reach the end of the training process. This time, with a full symbolic tree that contains no black-box nodes, the correct coefficients must be learned in order to minimise the loss. Indeed, if we query the learned symbolic representation, we get an extremely accurate result:
+
+```python
+f.symbolic()
+```
+> `1.00000047683716*x_0 + 0.999999403953677*(x_1 - x_2 + 1.19209325077929e-7)**1.99999988079071 + 2.99999952316284`
+
+Visualising this expression, we get:
+
+![After Training](imgs/post_training.png)
+
+Rounding the coefficients in this expression to the nearest $10^{-5}$, we get the correct answer: $x_0 + (x_1 - x_2)^2 + 3$.
+
+This is an exciting result, because symbolic regression has long been regarded as an extremely difficult problem. It can be used to uncover fundamental laws about the universe, or to explain the behaviour of black-box systems. While most existing methods result to searches over discrete sets of options, this method incorporates a gradient descent-based approach. While it has not *solved* the problem of symbolic regression, it does push the research frontier by introducing a new idea. In the future, this work can be extended---in particular it would be interesting to use the separability criterion not only for selecting between node choices, but also as an auxiliarly loss to guide the learning process (*e.g.* for an expression $(x_0-x_1)^a$, the separability loss can find the value of $a$ such that the subexpression is separable).
+
