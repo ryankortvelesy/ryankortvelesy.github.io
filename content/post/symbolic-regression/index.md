@@ -106,6 +106,28 @@ If we instead run the same experiment with the function $f(x_0, x_1, x_2) = (x_0
 [0, 1, 1]]
 ```
 
-In this case, the separability test indicates that the equation can be represented in the form $f(x_0, x_1, x_2) = g_1(x_0, x_1) + g_2(x_0, x_2)$ OR the form $f(x_0, x_1, x_2) = h_1(x_0) \cdot h_2(x_1, x_2)$. We can verify this by choosing $g_1(x_0,x_2)=x_1 \cdot (x_0 + 3)$, $g_2(x_0,x_2)=-x_2 \cdot (x_0 + 3)$ or $h_1(x_0)=x_0+3$, $h_2(x_1, x_2) = x_1-x_2$. In this scenario, since the multiplicative case performs more separation (*i.e.* there are fewer edges in the separability graph), we would choose that form.
+In this case, the separability test indicates that the equation can be represented in the form $f(x_0, x_1, x_2) = g_1(x_0, x_1) + g_2(x_0, x_2)$ OR the form $f(x_0, x_1, x_2) = h_1(x_0) \cdot h_2(x_1, x_2)$. We can verify this by choosing $g_1(x_0,x_2)=x_1 \cdot (x_0 + 3)$,  $g_2(x_0,x_2)=-x_2 \cdot (x_0 + 3)$ or $h_1(x_0)=x_0+3$,  $h_2(x_1, x_2) = x_1-x_2$. In this scenario, since the multiplicative case performs more separation (*i.e.* there are fewer edges in the separability graph), we would choose that form.
 
+Returning to the original equation $f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$, let us visualise the process of regression. After training the root node, we can query the symbolic representation at this stage in training (returned as a sympy expression):
 
+```python
+f.symbolic()
+```
+> `f_0(x_0, x_1, x_2)`
+
+That is fairly boring---but predictably so, as the symbolic tree currently only consists of a black box node. We can also visualise this function by plotting it over the input space. Since this function is three dimensional and we can only plot functions from $\mathbb{R}^2 \to \mathbb{R}$, we instead plot the function $\phi(x_0,x_1) = f(x_0, x_1, 0)$ (*i.e.* we plot a "slice" of the function over only the first two inputs, where the third input is conditioned to be $0$).
+
+![First Iteration](imgs/pre_training.png)
+
+After the first iteration of training, the algorithm identifies that the expression is additively separable (as we demonstrated with the separability matrix). Subsequently, finding that it is no longer possible to separate variables in the subexpressions, the algorithm attempts to add univariate nodes to the graph. After training several possibilities, it selects $x^a$ as the best possibility, and trains the parameter $a$ in that grey-box node. Querying the new symbolic representation yields:
+
+```python
+f.symbolic()
+```
+> `f_0(x_0) + 1.6548810005188*f_1(x_1, x_2)**2.08383822441101 - 0.0643232762813568`
+
+While the coefficients of this equation are not correct, this is expected behaviour. Since the leaf nodes are still represented by black-box functions, there is no need to choose the correct coefficients in order to yield the correct results. For example, even though the correct constant term is $3$, the current value of $-0.0643$ can be offset by a value of $3.0643$ in $f_0(x_0)$ or $f_1(x_1, x_2)$ (or a combination of the two). However, note that the exponent is approaching the desired value of $2$. This happens because it is easier for $f_1$ to represent simpler functions, so there is an inductive bias that incentivises the grey box node to choose the proper exponent.
+
+At this stage in training, we again visualise the function that has been learned so far:
+
+![During Training](imgs/during_training.png)
