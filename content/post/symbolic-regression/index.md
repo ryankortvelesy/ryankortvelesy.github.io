@@ -17,17 +17,15 @@ While this hybrid approach might be probabilistically complete, it requires that
 
 In addition to loss, we introduce one more piece of intuition that can guide the search process: the notion of separability. We note that if a function $f$ is linearly separable between variables $x_0$ and $x_1$ (*i.e.* it takes the form $f(x_0, x_1) = g_0(x_0) + g_1(x_1)$), then it obeys the property $\frac{\partial}{\partial x_0} \frac{\partial}{\partial x_1} f = 0$. Similarly, if a function $f$ is multiplicatively separable (*i.e* it takes the form $f(x_0, x_1) = g_0(x_0) \cdot g_1(x_1)$), then it obeys the property $\frac{\partial}{\partial x_1} \frac{\frac{\partial}{\partial x_0} f(x_0, x_1)}{f(x_0, x_1)} = 0$. Indeed, we can prove that the converse of these statements is also true:
 
-$$\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j} h(\vec{x}) = 0$$
+$$\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j} h(\vec{x}) = 0 \implies h(\vec{x}) = C_1(x_i) + C_2(x_j)$$
 
 > Proof:
 $$ \int \int \frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j} h(\vec{x}) \, dx_j \, dx_i = 0 $$
 $$ \int \frac{\partial}{\partial x_i} h(\vec{x}) + C_0(x_i) \, dx_i = 0$$
-$$ h(\vec{x}) = C_1(x_i) + C_2(x_j) $$
 $$ \left( C_1(x_i) = \int C_0(x_i) \, dx_i \right) $$
+$$ h(\vec{x}) = C_1(x_i) + C_2(x_j) $$
 
-The test for multiplicative separability is:
-
-$$\frac{\partial}{\partial x_i} \frac{\frac{\partial}{\partial x_j} h(\vec{x})}{h(\vec{x})} = 0$$
+$$\frac{\partial}{\partial x_i} \frac{\frac{\partial}{\partial x_j} h(\vec{x})}{h(\vec{x})} = 0 \implies h(\vec{x}) = C_3(x_i) \cdot C_4(x_j)$$
 
 > Proof:
 $$\int\int \frac{\partial}{\partial x_i} \frac{\frac{\partial}{\partial x_j} h(\vec{x})}{h(\vec{x})} \, dx_j \, dx_i = 0 $$
@@ -35,8 +33,79 @@ $$ \int \frac{\partial}{\partial x_i} \ln\left({h(\vec{x})}\right) + C_0(x_i) \,
 $$ \ln\left({h(\vec{x})}\right) + C_1(x_i) + C_2(x_j) = 0 $$
 $$ \ln(h(\vec{x})) = -C_1(x_i) + C_2(x_j)$$
 $$ h(\vec{x}) = e^{-C_1(x_i) - C_2(x_j)} $$
-$$ h(\vec{x}) = C_3(x_i) \cdot C_4(x_j) $$
 $$ \left( C_1(x_i) = \int C_0(x_i) \, dx_i), \, C_3(x_i) = e^{-C_1(x_i)}, \,\, C_4(x_j) = e^{-C_2(x_j)} \right) $$
+$$ h(\vec{x}) = C_3(x_i) \cdot C_4(x_j) $$
 
 Using this property, we can create a test for the separability of a given black-box leaf node. This tells us not only whether to use a univariate or multivariate operation, but also *which* multivariate operation to use if it is the latter. Furthermore, it explicitly dictates which subsets we can partition the set of input variables into. By applying the separability checks between each pair of variables, we obtain a matrix where elements are zero if they are separable (in the case of additive separability, this is simply the Hessian matrix). Thresholding this matrix yields an adjacency matrix where each link represents a non-separable connection between two variables. Now, to identify the set of non-separable functions over subsets of the input variables (which represent the black-box child nodes of the multivariate node we are adding), we must find the set of all fully connected subgraphs. This is known as the "clique problem", a solution for which comes pre-implemented in most graph-reasoning libraries (in practice, we use networkx).
+
+As a case study, let us consider the equation:
+
+$$ f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$$
+
+We wish to use our symbolic regression method to recover this equation given inputs and outputs of this function. To start the process, we initialise a tree with a single learnable black box function at the root node. After training this root node to represent the data, we can run our additive and multiplicative separability tests. Since the absolute scale of the derivatives don't matter, we normalise by the largest value in the matrix:
+
+**Additive Separability Matrix**: $f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$
+```python
+[[0.0191, 0.0082, 0.0075],
+[0.0082, 0.8789, 0.5029],
+[0.0075, 0.5029, 1.0000]]
+```
+
+**Multiplicative Separability Matrix**: $f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$
+```python
+[[0.1429, 0.2476, 0.2453],
+[0.2476, 0.9939, 1.0000],
+[0.2453, 1.0000, 0.9939]]
+```
+
+Thresholding these matrices, we obtain adjacency matrices for the graphs corresponding to elements that are additively or multiplicatively entagled. Note that we always assume that the diagonal is filled with ones, as there is no meaning to a variable being "separable from itself".
+
+**Additive Separability Graph**: $f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$
+```python
+[[1, 0, 0],
+[0, 1, 1],
+[0, 1, 1]]
+```
+
+**Multiplicative Separability Graph**: $f(x_0, x_1, x_2) = x_0 + 3 + (x_1 - x_2)^2$
+```python
+[[1, 1, 1],
+[1, 1, 1],
+[1, 1, 1]]
+```
+
+This implies that the element $x_0$ is additively separable from $x_1$ and $x_2$. By inspection of the ground truth equation, we can verify that it can be represented in the form f(x_0, x_1, x_2) = g_1(x_0) + g_2(x_1, x_2). 
+
+If we instead run the same experiment with the function $f(x_0, x_1, x_2) = (x_0 + 3) \cdot (x_1 - x_2)$, then the separability results change significantly:
+
+**Additive Separability Matrix**: $f(x_0, x_1, x_2) = (x_0 + 3) \cdot (x_1 - x_2)$
+```python
+[[1.0000, 0.3967, 0.3967],
+[0.3967, 0.0706, 0.0698],
+[0.3967, 0.0698, 0.0702]]
+```
+
+**Multiplicative Separability Matrix**: $f(x_0, x_1, x_2) = (x_0 + 3) \cdot (x_1 - x_2)$
+```python
+[[0.0000, 0.0017, 0.0017],
+[0.0017, 1.0000, 0.9995],
+[0.0017, 0.9995, 0.9990]]
+```
+
+**Additive Separability Graph**: $f(x_0, x_1, x_2) = (x_0 + 3) \cdot (x_1 - x_2)$
+```python
+[[1, 1, 1],
+[1, 1, 0],
+[1, 0, 1]]
+```
+
+**Multiplicative Separability Graph**: $f(x_0, x_1, x_2) = (x_0 + 3) \cdot (x_1 - x_2)$
+```python
+[[1, 0, 0],
+[0, 1, 1],
+[0, 1, 1]]
+```
+
+In this case, the separability test indicates that the equation can be represented in the form $f(x_0, x_1, x_2) = g_1(x_0, x_1) + g_2(x_0, x_2)$ OR the form $f(x_0, x_1, x_2) = h_1(x_0) \cdot h_2(x_1, x_2)$. We can verify this by choosing $g_1(x_0,x_2)=x_1 \cdot (x_0 + 3)$, $g_2(x_0,x_2)=-x_2 \cdot (x_0 + 3)$ or $h_1(x_0)=x_0+3$, $h_2(x_1, x_2) = x_1-x_2$. In this scenario, since the multiplicative case performs more separation (*i.e.* there are fewer edges in the separability graph), we would choose that form.
+
 
