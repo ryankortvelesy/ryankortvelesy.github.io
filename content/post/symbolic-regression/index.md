@@ -17,7 +17,26 @@ While this hybrid approach might be probabilistically complete, it requires that
 
 In addition to loss, we introduce one more piece of intuition that can guide the search process: the notion of separability. We note that if a function $f$ is linearly separable between variables $x_0$ and $x_1$ (*i.e.* it takes the form $f(x_0, x_1) = g_0(x_0) + g_1(x_1)$), then it obeys the property $\frac{\partial}{\partial x_0} \frac{\partial}{\partial x_1} f = 0$. Similarly, if a function $f$ is multiplicatively separable (*i.e* it takes the form $f(x_0, x_1) = g_0(x_0) \cdot g_1(x_1)$), then it obeys the property $\frac{\partial}{\partial x_1} \frac{\frac{\partial}{\partial x_0} f(x_0, x_1)}{f(x_0, x_1)} = 0$. Indeed, we can prove that the converse of these statements is also true:
 
-# TODO: add proofs
+$$\frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j} h(\vec{x}) = 0$$
+
+> Proof:
+$$ \int \int \frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j} h(\vec{x}) \, dx_j \, dx_i = 0 $$
+$$ \int \frac{\partial}{\partial x_i} h(\vec{x}) + C_0(x_i) \, dx_i = 0$$
+$$ h(\vec{x}) = C_1(x_i) + C_2(x_j) $$
+$$ \left( C_1(x_i) = \int C_0(x_i) \, dx_i \right) $$
+
+The test for multiplicative separability is:
+
+$$\frac{\partial}{\partial x_i} \frac{\frac{\partial}{\partial x_j} h(\vec{x})}{h(\vec{x})} = 0$$
+
+> Proof:
+$$\int\int \frac{\partial}{\partial x_i} \frac{\frac{\partial}{\partial x_j} h(\vec{x})}{h(\vec{x})} \, dx_j \, dx_i = 0 $$
+$$ \int \frac{\partial}{\partial x_i} \ln\left({h(\vec{x})}\right) + C_0(x_i) \, dx_i = 0 $$ 
+$$ \ln\left({h(\vec{x})}\right) + C_1(x_i) + C_2(x_j) = 0 $$
+$$ \ln(h(\vec{x})) = -C_1(x_i) + C_2(x_j)$$
+$$ h(\vec{x}) = e^{-C_1(x_i) - C_2(x_j)} $$
+$$ h(\vec{x}) = C_3(x_i) \cdot C_4(x_j) $$
+$$ \left( C_1(x_i) = \int C_0(x_i) \, dx_i), \, C_3(x_i) = e^{-C_1(x_i)}, \,\, C_4(x_j) = e^{-C_2(x_j)} \right) $$
 
 Using this property, we can create a test for the separability of a given black-box leaf node. This tells us not only whether to use a univariate or multivariate operation, but also *which* multivariate operation to use if it is the latter. Furthermore, it explicitly dictates which subsets we can partition the set of input variables into. By applying the separability checks between each pair of variables, we obtain a matrix where elements are zero if they are separable (in the case of additive separability, this is simply the Hessian matrix). Thresholding this matrix yields an adjacency matrix where each link represents a non-separable connection between two variables. Now, to identify the set of non-separable functions over subsets of the input variables (which represent the black-box child nodes of the multivariate node we are adding), we must find the set of all fully connected subgraphs. This is known as the "clique problem", a solution for which comes pre-implemented in most graph-reasoning libraries (in practice, we use networkx).
 
