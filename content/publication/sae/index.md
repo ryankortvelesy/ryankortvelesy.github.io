@@ -48,7 +48,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: false
-  placement: 1
+  placement: 2
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
