@@ -14,7 +14,7 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: Technical Report
-publication_short: Arxiv
+publication_short: arXiv
 
 abstract: It is often useful to perform integration over learned functions represented by neural networks. However, this integration is usually performed numerically, as analytical integration over learned functions (especially neural networks) is generally viewed as intractable. In this work, we present a method for representing the analytical integral of a learned function $f$. This allows the exact integral of a neural network to be computed, and enables constrained neural networks to be parametrised by applying constraints directly to the integral. Crucially, we also introduce a method to constrain $f$ to be positive, a necessary condition for many applications (e.g. probability distributions, distance metrics, etc). Finally, we introduce several applications where our fixed-integral neural network (FINN) can be utilised.
 
@@ -24,7 +24,7 @@ summary: A method for analytically computing integrals over neural networks.
 tags: []
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
