@@ -16,8 +16,8 @@ abstract: The problem of permutation-invariant learning over set representations
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2023-06-02T00:00:00Z'
-date_end: '2023-06-02T00:00:00Z'
+date: '2023-06-02T10:45:00Z'
+date_end: '2023-06-02T12:30:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
