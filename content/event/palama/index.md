@@ -37,7 +37,7 @@ image:
 links:
   - icon: facebook
     icon_pack: fab
-    name: Link
+    name: Talk
     url: https://www.facebook.com/MalamaPalama/posts/this-is-a-story-of-giving-backwhen-ryan-kortvelesy-was-ready-to-complete-his-eag/3579961418708245/
 url_code: ''
 url_pdf: ''
