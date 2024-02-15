@@ -1,5 +1,5 @@
 ---
-title: 'Generalised f-Mean Aggregation for Graph Neural Networks'
+title: 'VMAS: A Vectorized Multi-Agent Simulator for Collective Robot Learning'
 
 authors:
   - admin
