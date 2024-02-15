@@ -69,8 +69,8 @@ sections:
           company_url: ''
           company_logo: cambridge
           location: Cambridge, UK
-          date_start: '2016-09-01'
-          date_end: '2019-05-31'
+          date_start: '2019-10-01'
+          date_end: '2024-02-13'
           description: |2-
             - *Graph Neural Networks for Multi-Agent Learning*
             - *Supervisor: Amanda Prorok*
