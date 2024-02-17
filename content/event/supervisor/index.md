@@ -17,12 +17,12 @@ abstract: A long-held tenet of Cambridge's teaching philosopy is the supervision
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2023-03-18T12:00:00Z'
-date_end: '2023-03-18T14:00:00Z'
+date: '2021-10-25T00:00:00Z'
+date_end: '2021-11-09T00:00:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2023-03-18T00:00:00Z'
+publishDate: '2021-11-09T00:00:00Z'
 
 authors: []
 tags: []
@@ -31,7 +31,7 @@ tags: []
 featured: false
 
 image:
-  caption: The booth drew attention from both an academic audience (interested in the mechanics of training reinforcement learning policies in simulation) and a younger audience (interested in playing and making their own video games).
+  caption: Syllabus for the Foundations in Computer Science Course
   focal_point: Right
 
 links:
