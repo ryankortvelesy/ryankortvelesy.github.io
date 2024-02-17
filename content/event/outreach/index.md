@@ -35,6 +35,8 @@ image:
   focal_point: Right
 
 links:
+  - name: Paper
+    url: https://ryankortvelesy.github.io/publication/vmas/ 
 url_code: ''
 url_pdf: ''
 url_slides: ''
